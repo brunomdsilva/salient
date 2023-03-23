@@ -1,29 +1,29 @@
 <template>
-	<div class="flex flex-col justify-center items-center lg:items-stretch lg:flex-row gap-4 sm:gap-8 font-light">
+	<div class="flex flex-col justify-center items-center lg:items-stretch lg:flex-row gap-4 sm:gap-8">
 		<div
-			v-for="(princing, index) in pricings"
-			class="group w-full max-w-xl lg:max-w-sm p-6 sm:p-8 rounded-3xl flex flex-col gap-6 sm:gap-10 hover:bg-blue-600/40 transition-colors duration-300"
-			:class="{ 'bg-blue-600': index === 1 }"
+			v-for="pricing in pricings"
+			class="group w-full max-w-xl lg:max-w-sm p-6 sm:p-8 rounded-3xl flex flex-col gap-6 sm:gap-10 transition-all duration-300 border-2 border-transparent hover:border-white hover:shadow-2xl hover:-translate-y-4"
+			:class="{ 'bg-blue-600': pricing.recommended }"
 		>
-			<h3 v-text="princing.price" class="font-display text-5xl" />
+			<h3 v-text="pricing.price" class="font-display text-5xl" />
 			<div class="space-y-2">
-				<p v-text="princing.title" class="text-lg font-display" />
+				<p v-text="pricing.title" class="text-lg font-display" />
 				<p
-					v-text="princing.description"
+					v-text="pricing.description"
 					class="group-hover:text-white transition-colors duration-300"
-					:class="{ 'text-slate-500': index !== 1 }"
+					:class="{ 'text-slate-500': !pricing.recommended }"
 				/>
 			</div>
 			<Button
 				v-text="'Get started'"
-				class="text-sm w-full font-normal group-hover:border-white group-hover:bg-white group-hover:text-slate-900 transition-colors duration-300"
-				:class="index !== 1 ? 'border-slate-600 text-slate-400' : 'border-white bg-white text-slate-900'"
+				class="text-sm w-full transition-colors duration-300 border-white"
+				:class="{ 'bg-white text-slate-900': pricing.recommended }"
 			/>
 			<div class="flex flex-col gap-4 text-sm">
 				<div
-					v-for="feature in princing.features"
+					v-for="feature in pricing.features"
 					class="flex items-center gap-4 group-hover:text-white transition-colors duration-300"
-					:class="{ 'text-slate-400': index !== 1 }"
+					:class="{ 'text-slate-400': !pricing.recommended }"
 				>
 					<IconCheck class="w-4" />
 					<span v-text="feature" />
@@ -64,6 +64,7 @@ const pricings = ref([
 			"Bulk reconcile transactions",
 			"Track in multiple currencies",
 		],
+		recommended: true,
 	},
 	{
 		price: "$39",

@@ -1,7 +1,5 @@
 <template>
-	<header
-		class="text-slate-600 text-sm font-light shadow bg-white/95 md:bg-white/80 py-10 sticky top-0 z-10 md:backdrop-blur"
-	>
+	<header class="text-slate-600 text-sm shadow bg-white/95 md:bg-white/80 py-10 sticky top-0 z-10 md:backdrop-blur">
 		<Container class="flex items-center justify-between gap-4">
 			<div class="flex items-center gap-8">
 				<a href="#">
@@ -54,11 +52,8 @@ import Dropdown from "./Dropdown.vue"
 import DropdownItem from "./DropdownItem.vue"
 import IconBars from "./Icons/IconBars.vue"
 import Button from "./Button.vue"
-import { ref } from "vue"
 
-const menuItems = ref([
-	{ label: "Features", link: "#features" },
-	{ label: "Testimonials", link: "#testimonials" },
-	{ label: "Pricing", link: "#pricing" },
-])
+const props = defineProps({
+	menuItems: Array,
+})
 </script>

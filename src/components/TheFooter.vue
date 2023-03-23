@@ -1,5 +1,5 @@
 <template>
-	<footer class="py-14 text-slate-500">
+	<footer class="py-14 text-slate-500 bg-slate-50">
 		<Container class="flex flex-col gap-10">
 			<div class="flex flex-col items-center gap-6">
 				<a href="#">
@@ -30,18 +30,13 @@
 	</footer>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import Container from "./Container.vue"
 import Logo from "./Icons/Logo.vue"
 import IconGithub from "./Icons/IconGithub.vue"
 import IconTwitter from "./Icons/IconTwitter.vue"
 
-type MenuItem = {
-	label: string
-	link: string
-}
-
-const props = defineProps<{
-	menuItems: MenuItem[]
-}>()
+const props = defineProps({
+	menuItems: Array,
+})
 </script>

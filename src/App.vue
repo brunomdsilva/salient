@@ -1,6 +1,6 @@
 <template>
 	<div class="text-slate-900 bg-white min-h-screen">
-		<TheHeader />
+		<TheHeader :menuItems="menuItems" />
 		<TheMain />
 		<TheFooter :menuItems="menuItems" />
 	</div>
@@ -16,5 +16,6 @@ const menuItems = ref([
 	{ label: "Features", link: "#features" },
 	{ label: "Testimonials", link: "#testimonials" },
 	{ label: "Pricing", link: "#pricing" },
+	{ label: "FAQ", link: "#faq" },
 ])
 </script>
