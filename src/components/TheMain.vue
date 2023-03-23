@@ -33,9 +33,9 @@
 			</Container>
 		</Section>
 
-		<Section class="bg-blue-600 bg-[url('/imgs/featured-bg-2.jpg')] bg-contain bg-bottom bg-no-repeat">
-			<Container class="space-y-12">
-				<div class="w-full max-w-2xl mx-auto space-y-6 text-center text-white">
+		<Section class="bg-blue-600 bg-[url('/imgs/featured-bg-2.jpg')] bg-cover bg-no-repeat space-y-12">
+			<Container class="space-y-16">
+				<div class="space-y-6 text-center text-white">
 					<Title v-text="'Everything you need to run your books.'" />
 					<SubTitle class="text-white">
 						Well everything you need if you aren\'t that picky about minor details like tax compliance.
@@ -43,6 +43,18 @@
 				</div>
 
 				<ImageChanger />
+			</Container>
+		</Section>
+
+		<Section class="bg-white">
+			<Container class="space-y-4">
+				<div class="w-full max-w-2xl space-y-4 mx-auto text-center font-display">
+					<Title v-text="'Simplify everyday business tasks.'" />
+					<SubTitle class="text-slate-700">
+						Because you'd probably be a little confused if we suggested you complicate your everyday
+						business tasks instead.
+					</SubTitle>
+				</div>
 			</Container>
 		</Section>
 

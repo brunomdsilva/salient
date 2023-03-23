@@ -1,18 +1,64 @@
 <template>
-	<div class="bg-white/10 border border-white/10 rounded-xl backdrop-blur-md overflow-hidden">
-		<div class="p-6 text-center text-white space-y-6">
-			<div class="flex items-center justify-center gap-4 flex-wrap font-display text-lg tracking-widest">
+	<div>
+		<!-- MOBILE -->
+		<div class="xl:hidden mx-4 bg-white/10 border border-white/20 rounded-xl backdrop-blur-md overflow-hidden">
+			<div class="p-8 sm:p-10 text-center text-white space-y-6">
+				<div class="flex items-center justify-center gap-4 flex-wrap font-display text-lg tracking-widest">
+					<button
+						v-for="(feature, index) in features"
+						v-text="feature.label"
+						@click.prevent="selectedFeatureIndex = index"
+						class="py-1.5 px-4 rounded-full hover:bg-white/20 transition-colors duration-300"
+						:class="{ '!bg-white text-blue-600': selectedFeatureIndex === index }"
+					/>
+				</div>
+				<p v-text="features[selectedFeatureIndex].description" class="text-lg" />
+			</div>
+
+			<div class="relative w-full aspect-video">
+				<Transition
+					enter-from-class="translate-y-full opacity-0"
+					leave-to-class="translate-y-full opacity-0"
+					class="transition-all duration-1000"
+				>
+					<img
+						:key="selectedFeatureIndex"
+						:src="features[selectedFeatureIndex].img"
+						:alt="features[selectedFeatureIndex].label"
+						class="rounded-xl absolute w-full h-full object-cover"
+					/>
+				</Transition>
+			</div>
+		</div>
+
+		<!-- DESKTOP -->
+		<div class="hidden xl:flex items-center justify-end">
+			<div class="flex flex-col gap-2 text-white translate-x-1 w-full max-w-lg">
 				<button
 					v-for="(feature, index) in features"
-					v-text="feature.label"
 					@click.prevent="selectedFeatureIndex = index"
-					class="py-1.5 px-4 rounded-full hover:bg-white/20 transition-colors duration-300"
-					:class="{ '!bg-white text-blue-600': selectedFeatureIndex === index }"
-				/>
+					class="p-6 rounded-l-xl border border-transparent transition-colors duration-300 hover:bg-white/5 text-left space-y-2"
+					:class="{ '!bg-white/10 border-white/20': selectedFeatureIndex === index }"
+				>
+					<span v-text="feature.label" class="text-lg font-display" />
+					<p v-text="feature.description" class="text-sm" />
+				</button>
 			</div>
-			<p v-text="features[selectedFeatureIndex].description" class="text-lg" />
+			<div class="relative w-full max-w-5xl h-[700px] -mr-96">
+				<Transition
+					enter-from-class="translate-x-full opacity-0"
+					leave-to-class="translate-x-full opacity-0"
+					class="transition-all duration-1000"
+				>
+					<img
+						:key="selectedFeatureIndex"
+						:src="features[selectedFeatureIndex].img"
+						:alt="features[selectedFeatureIndex].label"
+						class="rounded-xl absolute w-full h-full object-cover"
+					/>
+				</Transition>
+			</div>
 		</div>
-		<img :src="features[selectedFeatureIndex].img" :alt="features[selectedFeatureIndex].label" class="rounded-xl" />
 	</div>
 </template>
 
