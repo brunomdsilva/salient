@@ -5,7 +5,7 @@
 				<a href="#">
 					<Logo class="h-10" />
 				</a>
-				<nav class="items-center justify-center gap-3 hidden md:flex">
+				<nav class="flex flex-col sm:flex-row items-center justify-center gap-3">
 					<a
 						v-for="menu in menuItems"
 						v-text="menu.label"

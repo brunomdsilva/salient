@@ -48,13 +48,15 @@
 
 		<Section class="bg-white">
 			<Container class="space-y-4">
-				<div class="w-full max-w-2xl space-y-4 mx-auto text-center font-display">
+				<div class="w-full max-w-2xl space-y-4 mx-auto text-center">
 					<Title v-text="'Simplify everyday business tasks.'" />
 					<SubTitle class="text-slate-700">
 						Because you'd probably be a little confused if we suggested you complicate your everyday
 						business tasks instead.
 					</SubTitle>
 				</div>
+
+				<!-- TODO slider -->
 			</Container>
 		</Section>
 
@@ -76,7 +78,7 @@
 
 		<Section class="bg-slate-50" id="testimonials">
 			<Container class="space-y-4">
-				<div class="w-full max-w-2xl space-y-4 mx-auto text-center font-display">
+				<div class="w-full max-w-2xl space-y-4 mx-auto text-center">
 					<Title v-text="'Loved by businesses worldwide.'" />
 					<SubTitle class="text-slate-700">
 						Our software is so simple that people can't help but fall in love with it. Simplicity is easy
@@ -109,7 +111,7 @@
 
 		<Section class="bg-slate-50 bg-[url('/imgs/bg-faq.jpg')] bg-contain bg-right bg-no-repeat" id="faq">
 			<Container class="space-y-12">
-				<div class="w-full max-w-2xl space-y-4 font-display">
+				<div class="w-full max-w-2xl space-y-4">
 					<Title v-text="'Frequently asked questions'" />
 					<SubTitle class="text-slate-700">
 						If you can't find what you're looking for, email our support team and if you're lucky someone
@@ -117,8 +119,8 @@
 					</SubTitle>
 				</div>
 
-				<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-y-12">
-					<div v-for="faq in faqs" class="space-y-4 w-full max-w-sm">
+				<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+					<div v-for="faq in faqs" class="space-y-1 sm:space-y-4 w-full">
 						<h3 v-text="faq.question" class="font-display text-lg" />
 						<p v-text="faq.answer" class="text-sm" />
 					</div>

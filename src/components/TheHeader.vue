@@ -1,5 +1,7 @@
 <template>
-	<header class="text-slate-600 text-sm shadow bg-white/95 md:bg-white/80 py-10 sticky top-0 z-10 md:backdrop-blur">
+	<header
+		class="text-slate-600 text-sm md:shadow bg-white/95 md:bg-white/80 py-6 md:py-10 sticky top-0 z-10 md:backdrop-blur"
+	>
 		<Container class="flex items-center justify-between gap-4">
 			<div class="flex items-center gap-8">
 				<a href="#">
@@ -29,6 +31,7 @@
 					Get started <span v-text="'today'" class="hidden lg:inline" />
 				</Button>
 
+				<!-- TODO make a specific dropdown for the mobile menu -->
 				<Dropdown class="md:hidden">
 					<template #trigger>
 						<IconBars class="w-5" />

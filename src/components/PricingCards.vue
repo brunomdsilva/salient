@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col justify-center items-center lg:items-stretch lg:flex-row gap-4 sm:gap-8">
+	<div class="flex flex-col justify-center items-center lg:items-stretch lg:flex-row gap-8">
 		<div
 			v-for="pricing in pricings"
 			class="group w-full max-w-xl lg:max-w-sm p-6 sm:p-8 rounded-3xl flex flex-col gap-6 sm:gap-10 transition-all duration-300 border-2 border-transparent hover:border-white hover:shadow-2xl hover:-translate-y-4"

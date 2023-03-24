@@ -1,7 +1,8 @@
 <template>
 	<div>
+		<!-- TODO make image bigger (overflow screen) -->
 		<!-- MOBILE -->
-		<div class="xl:hidden mx-4 bg-white/10 border border-white/20 rounded-xl backdrop-blur-md overflow-hidden">
+		<div class="xl:hidden bg-white/10 border border-white/20 rounded-xl backdrop-blur-md overflow-hidden">
 			<div class="p-8 sm:p-10 text-center text-white space-y-6">
 				<div class="flex items-center justify-center gap-4 flex-wrap font-display text-lg tracking-widest">
 					<button
