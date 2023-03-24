@@ -51,10 +51,10 @@
 
 <script setup>
 import Container from "./Container.vue"
-import Logo from "./Icons/Logo.vue"
+import Logo from "./icons/Logo.vue"
 import Dropdown from "./Dropdown.vue"
 import DropdownItem from "./DropdownItem.vue"
-import IconBars from "./Icons/IconBars.vue"
+import IconBars from "./icons/IconBars.vue"
 import Button from "./Button.vue"
 
 const props = defineProps({

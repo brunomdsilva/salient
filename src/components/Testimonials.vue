@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import IconQuotes from "./Icons/IconQuotes.vue"
+import IconQuotes from "./icons/IconQuotes.vue"
 import { ref } from "vue"
 
 const testimonials = ref([

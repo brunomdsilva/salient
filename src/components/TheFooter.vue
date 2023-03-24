@@ -32,9 +32,9 @@
 
 <script setup>
 import Container from "./Container.vue"
-import Logo from "./Icons/Logo.vue"
-import IconGithub from "./Icons/IconGithub.vue"
-import IconTwitter from "./Icons/IconTwitter.vue"
+import Logo from "./icons/Logo.vue"
+import IconGithub from "./icons/IconGithub.vue"
+import IconTwitter from "./icons/IconTwitter.vue"
 
 const props = defineProps({
 	menuItems: Array,

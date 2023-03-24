@@ -35,7 +35,7 @@
 
 <script lang="ts" setup>
 import Button from "./Button.vue"
-import IconCheck from "./Icons/IconCheck.vue"
+import IconCheck from "./icons/IconCheck.vue"
 import { ref } from "vue"
 
 const pricings = ref([
