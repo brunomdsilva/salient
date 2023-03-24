@@ -1,6 +1,7 @@
 <template>
+	<!-- FIX sticky positioning -->
 	<header
-		class="text-slate-600 text-sm md:shadow bg-white/95 md:bg-white/80 py-6 md:py-10 sticky top-0 z-10 md:backdrop-blur"
+		class="text-slate-600 text-sm md:shadow bg-white/95 md:bg-white/80 py-6 md:py-10 md:sticky top-0 z-10 md:backdrop-blur"
 	>
 		<Container class="flex items-center justify-between gap-4">
 			<div class="flex items-center gap-8">
