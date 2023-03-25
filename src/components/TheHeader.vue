@@ -32,7 +32,11 @@
 				<!-- MOBILE MENU -->
 				<div class="md:hidden">
 					<button class="p-2 md:hidden relative z-10" @click.prevent="showMobileMenu = !showMobileMenu">
-						<IconBars class="w-5" />
+						<component
+							:is="showMobileMenu ? IconX : IconBars"
+							class="w-5"
+							:class="{ 'text-red-500': showMobileMenu }"
+						/>
 					</button>
 
 					<Transition
@@ -83,6 +87,7 @@
 import Container from "./Container.vue"
 import Logo from "./icons/Logo.vue"
 import IconBars from "./icons/IconBars.vue"
+import IconX from "./icons/IconX.vue"
 import Button from "./Button.vue"
 import { ref } from "vue"
 

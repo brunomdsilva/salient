@@ -59,7 +59,7 @@
 					</SubTitle>
 				</div>
 
-				<!-- TODO slider -->
+				<!-- TODO make slider -->
 			</Container>
 		</Section>
 
