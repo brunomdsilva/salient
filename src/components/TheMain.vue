@@ -33,7 +33,10 @@
 			</Container>
 		</Section>
 
-		<Section class="bg-blue-600 bg-[url('/imgs/featured-bg-2.jpg')] bg-cover bg-no-repeat space-y-12">
+		<Section
+			id="features"
+			class="bg-blue-600 bg-[url('/imgs/featured-bg-2.jpg')] bg-cover bg-no-repeat space-y-12 overflow-hidden"
+		>
 			<Container class="space-y-16">
 				<div class="space-y-6 text-center text-white">
 					<Title v-text="'Everything you need to run your books.'" />
@@ -76,7 +79,7 @@
 			</Container>
 		</Section>
 
-		<Section class="bg-slate-50" id="testimonials">
+		<Section id="testimonials" class="bg-slate-50">
 			<Container class="space-y-4">
 				<div class="w-full max-w-2xl space-y-4 mx-auto text-center">
 					<Title v-text="'Loved by businesses worldwide.'" />
@@ -90,7 +93,7 @@
 			</Container>
 		</Section>
 
-		<Section class="bg-slate-900" id="pricing">
+		<Section id="pricing" class="bg-slate-900">
 			<Container class="text-white space-y-16">
 				<div class="text-center space-y-6">
 					<Title>
@@ -109,7 +112,7 @@
 			</Container>
 		</Section>
 
-		<Section class="bg-slate-50 bg-[url('/imgs/bg-faq.jpg')] bg-contain bg-right bg-no-repeat" id="faq">
+		<Section id="faq" class="bg-slate-50 bg-[url('/imgs/bg-faq.jpg')] bg-contain bg-right bg-no-repeat">
 			<Container class="space-y-12">
 				<div class="w-full max-w-2xl space-y-4">
 					<Title v-text="'Frequently asked questions'" />

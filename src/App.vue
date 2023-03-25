@@ -1,5 +1,5 @@
 <template>
-	<div class="text-slate-900 bg-white min-h-screen overflow-x-hidden">
+	<div class="text-slate-900 bg-white min-h-screen">
 		<TheHeader :menuItems="menuItems" />
 		<TheMain />
 		<TheFooter :menuItems="menuItems" />

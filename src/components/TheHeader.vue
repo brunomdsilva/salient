@@ -1,9 +1,6 @@
 <template>
-	<!-- FIX sticky positioning -->
-	<header
-		class="text-slate-600 text-sm md:shadow bg-white/95 md:bg-white/80 py-6 md:py-10 md:sticky top-0 z-10 md:backdrop-blur"
-	>
-		<Container class="flex items-center justify-between gap-4">
+	<header class="shadow bg-white/90 py-6 md:py-10 _backdrop-blur sticky top-0 z-10">
+		<Container class="flex items-center justify-between gap-4 text-slate-600 text-sm">
 			<div class="flex items-center gap-8">
 				<a href="#">
 					<Logo class="h-10" />
@@ -18,11 +15,11 @@
 				</nav>
 			</div>
 
-			<div class="flex items-center sm:gap-4 gap-2">
+			<div class="flex items-center gap-4">
 				<a
 					v-text="'Sign in'"
 					href="#sign"
-					class="rounded-lg py-1.5 px-3 transition-colors duration-300 hover:bg-slate-100 hidden md:block"
+					class="hidden rounded-lg py-1.5 px-3 transition-colors duration-300 hover:bg-slate-100 md:block"
 				/>
 
 				<Button
@@ -32,18 +29,51 @@
 					Get started <span v-text="'today'" class="hidden lg:inline" />
 				</Button>
 
-				<!-- TODO make a specific dropdown for the mobile menu -->
-				<Dropdown class="md:hidden">
-					<template #trigger>
+				<!-- MOBILE MENU -->
+				<div class="md:hidden">
+					<button class="p-2 md:hidden relative z-10" @click.prevent="showMobileMenu = !showMobileMenu">
 						<IconBars class="w-5" />
-					</template>
+					</button>
 
-					<template #content>
-						<DropdownItem v-for="menu in menuItems" :href="menu.link" v-text="menu.label" />
-						<hr class="my-1 mx-3" />
-						<DropdownItem href="#sign" v-text="'Sign in'" />
-					</template>
-				</Dropdown>
+					<Transition
+						enter-from-class="opacity-0"
+						leave-to-class="opacity-0"
+						class="transition-opacity duration-500"
+					>
+						<div
+							v-show="showMobileMenu"
+							@click.prevent="showMobileMenu = false"
+							class="fixed inset-0 bg-slate-200/50 backdrop-blur-sm"
+						/>
+					</Transition>
+
+					<Transition
+						enter-from-class="-translate-x-full opacity-0"
+						leave-to-class="-translate-x-full opacity-0"
+						class="transition-all duration-500"
+					>
+						<div
+							@click.stop
+							v-show="showMobileMenu"
+							class="p-4 absolute inset-x-4 top-20 bg-white rounded-xl shadow-lg"
+						>
+							<nav class="flex flex-col">
+								<button
+									v-for="menu in menuItems"
+									v-text="menu.label"
+									@click.prevent="redirect(menu.link)"
+									class="p-4 hover:bg-slate-100 rounded-lg text-left"
+								/>
+								<hr class="my-2" />
+								<button
+									v-text="'Sign in'"
+									@click.prevent="redirect('#sign')"
+									class="p-4 hover:bg-slate-100 rounded-lg text-left"
+								/>
+							</nav>
+						</div>
+					</Transition>
+				</div>
 			</div>
 		</Container>
 	</header>
@@ -52,12 +82,18 @@
 <script setup>
 import Container from "./Container.vue"
 import Logo from "./icons/Logo.vue"
-import Dropdown from "./Dropdown.vue"
-import DropdownItem from "./DropdownItem.vue"
 import IconBars from "./icons/IconBars.vue"
 import Button from "./Button.vue"
+import { ref } from "vue"
 
 const props = defineProps({
 	menuItems: Array,
 })
+
+const showMobileMenu = ref(true)
+
+function redirect(link) {
+	showMobileMenu.value = false
+	window.location = link
+}
 </script>
