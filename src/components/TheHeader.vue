@@ -1,6 +1,6 @@
 <template>
-	<header class="shadow bg-white/90 py-6 md:py-10 _backdrop-blur sticky top-0 z-10">
-		<Container class="flex items-center justify-between gap-4 text-slate-600 text-sm">
+	<header class="shadow py-6 md:py-10 sticky top-0 z-10 bg-white">
+		<Container class="relative flex items-center justify-between gap-4 text-slate-600 text-sm">
 			<div class="flex items-center gap-8">
 				<a href="#">
 					<Logo class="h-10" />
@@ -59,7 +59,7 @@
 						<div
 							@click.stop
 							v-show="showMobileMenu"
-							class="p-4 absolute inset-x-4 top-20 bg-white rounded-xl shadow-lg"
+							class="p-4 absolute inset-x-4 top-14 bg-white rounded-xl shadow-lg"
 						>
 							<nav class="flex flex-col">
 								<button
@@ -95,7 +95,7 @@ const props = defineProps({
 	menuItems: Array,
 })
 
-const showMobileMenu = ref(true)
+const showMobileMenu = ref(false)
 
 function redirect(link) {
 	showMobileMenu.value = false

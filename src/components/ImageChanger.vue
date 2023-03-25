@@ -1,8 +1,7 @@
 <template>
 	<div>
-		<!-- TODO make image bigger (overflow screen) -->
 		<!-- MOBILE -->
-		<div class="xl:hidden bg-white/10 border border-white/20 rounded-xl backdrop-blur-md overflow-hidden">
+		<div class="xl:hidden bg-white/10 border border-white/25 rounded-xl backdrop-blur-md sm:overflow-hidden">
 			<div class="p-8 sm:p-10 text-center text-white space-y-6">
 				<div class="flex items-center justify-center gap-4 flex-wrap font-display text-lg tracking-widest">
 					<button
@@ -16,7 +15,7 @@
 				<p v-text="features[selectedFeatureIndex].description" class="text-lg" />
 			</div>
 
-			<div class="relative w-full aspect-video">
+			<div class="relative h-[450px] aspect-video sm:w-full sm:h-auto rounded-xl overflow-hidden">
 				<Transition
 					enter-from-class="translate-y-full opacity-0"
 					leave-to-class="translate-y-full opacity-0"
@@ -26,7 +25,7 @@
 						:key="selectedFeatureIndex"
 						:src="features[selectedFeatureIndex].img"
 						:alt="features[selectedFeatureIndex].label"
-						class="rounded-xl absolute w-full h-full object-cover"
+						class="rounded-xl absolute h-full sm:w-full object-cover object-top"
 					/>
 				</Transition>
 			</div>
@@ -45,17 +44,17 @@
 					<p v-text="feature.description" class="text-sm" />
 				</button>
 			</div>
-			<div class="relative w-full max-w-5xl h-[700px] -mr-96">
+			<div class="relative w-full max-w-5xl h-[700px] -mr-96 overflow-hidden rounded-xl">
 				<Transition
-					enter-from-class="translate-x-full opacity-0"
-					leave-to-class="translate-x-full opacity-0"
-					class="transition-all duration-1000"
+					enter-from-class="-translate-y-full "
+					leave-to-class="translate-y-full "
+					class="transition-transform duration-1000"
 				>
 					<img
 						:key="selectedFeatureIndex"
 						:src="features[selectedFeatureIndex].img"
 						:alt="features[selectedFeatureIndex].label"
-						class="rounded-xl absolute w-full h-full object-cover"
+						class="absolute w-full h-full object-cover"
 					/>
 				</Transition>
 			</div>
