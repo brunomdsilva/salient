@@ -18,11 +18,12 @@
 			<div class="flex items-center text-center justify-between flex-col sm:flex-row gap-4">
 				<p v-text="'Copyright © 2023 TaxPal. All rights reserved.'" />
 				<div class="flex items-center gap-4">
-					<a href="#" class="hover:text-slate-900 p-2 transition-colors duration-300">
+					<a
+						href="https://github.com/Brunoomds"
+						target="_blank"
+						class="hover:text-slate-900 p-2 transition-colors duration-300"
+					>
 						<IconGithub class="w-5" />
-					</a>
-					<a href="#" class="hover:text-slate-900 p-2 transition-colors duration-300">
-						<IconTwitter class="w-5" />
 					</a>
 				</div>
 			</div>
@@ -34,7 +35,6 @@
 import Container from "./Container.vue"
 import Logo from "./icons/Logo.vue"
 import IconGithub from "./icons/IconGithub.vue"
-import IconTwitter from "./icons/IconTwitter.vue"
 
 const props = defineProps({
 	menuItems: Array,

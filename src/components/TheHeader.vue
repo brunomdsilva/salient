@@ -18,12 +18,12 @@
 			<div class="flex items-center gap-4">
 				<a
 					v-text="'Sign in'"
-					href="#sign"
+					href="#"
 					class="hidden rounded-lg py-1.5 px-3 transition-colors duration-300 hover:bg-slate-100 md:block"
 				/>
 
 				<Button
-					href="#get-started"
+					href="#"
 					class="bg-primary-600 border-primary-600 hover:bg-primary-400 hover:border-primary-400 text-white"
 				>
 					Get started <span v-text="'today'" class="hidden lg:inline" />
@@ -69,11 +69,7 @@
 									class="p-4 hover:bg-slate-100 rounded-lg text-left"
 								/>
 								<hr class="my-2" />
-								<button
-									v-text="'Sign in'"
-									@click.prevent="redirect('#sign')"
-									class="p-4 hover:bg-slate-100 rounded-lg text-left"
-								/>
+								<button v-text="'Sign in'" class="p-4 hover:bg-slate-100 rounded-lg text-left" />
 							</nav>
 						</div>
 					</Transition>
