@@ -35,22 +35,22 @@
 
 		<Section
 			id="features"
-			class="bg-blue-600 bg-[url('/imgs/featured-bg-2.jpg')] bg-cover bg-no-repeat space-y-12 overflow-hidden"
+			class="bg-primary-600 bg-[url('/imgs/featured-bg-2.jpg')] bg-cover bg-no-repeat space-y-12 overflow-hidden"
 		>
 			<Container class="space-y-16">
 				<div class="space-y-6 text-center text-white">
-					<Title v-text="'Everything you need to run your books.'" />
+					<Title v-text="'Everything you need to run your books.'" class="md:text-5xl" />
 					<SubTitle class="text-white">
 						Well everything you need if you aren\'t that picky about minor details like tax compliance.
 					</SubTitle>
 				</div>
 
-				<ImageChanger />
+				<FeaturesChanger />
 			</Container>
 		</Section>
 
-		<Section class="bg-white">
-			<Container class="space-y-4">
+		<Section class="bg-white overflow-hidden space-y-16">
+			<Container>
 				<div class="w-full max-w-2xl space-y-4 mx-auto text-center">
 					<Title v-text="'Simplify everyday business tasks.'" />
 					<SubTitle class="text-slate-700">
@@ -58,12 +58,12 @@
 						business tasks instead.
 					</SubTitle>
 				</div>
-
-				<!-- TODO make slider -->
 			</Container>
+
+			<TasksSlider />
 		</Section>
 
-		<Section class="bg-blue-600 bg-[url('/imgs/featured-bg-1.jpg')] bg-contain bg-center bg-no-repeat bg-fixed">
+		<Section class="bg-primary-600 bg-[url('/imgs/featured-bg-1.jpg')] bg-contain bg-center bg-no-repeat bg-fixed">
 			<Container class="text-center text-white">
 				<div class="w-full max-w-lg mx-auto space-y-6">
 					<Title v-text="'Get started today'" />
@@ -80,7 +80,7 @@
 		</Section>
 
 		<Section id="testimonials" class="bg-slate-50">
-			<Container class="space-y-4">
+			<Container class="space-y-16">
 				<div class="w-full max-w-2xl space-y-4 mx-auto text-center">
 					<Title v-text="'Loved by businesses worldwide.'" />
 					<SubTitle class="text-slate-700">
@@ -113,7 +113,7 @@
 		</Section>
 
 		<Section id="faq" class="bg-slate-50 bg-[url('/imgs/bg-faq.jpg')] bg-contain bg-right bg-no-repeat">
-			<Container class="space-y-12">
+			<Container class="space-y-16">
 				<div class="w-full max-w-2xl space-y-4">
 					<Title v-text="'Frequently asked questions'" />
 					<SubTitle class="text-slate-700">
@@ -142,10 +142,11 @@ import PricingCards from "./PricingCards.vue"
 import IconTextDecoration from "./icons/IconTextDecoration.vue"
 import IconTextDecoration2 from "./icons/IconTextDecoration2.vue"
 import IconPlay from "./icons/IconPlay.vue"
-import ImageChanger from "./ImageChanger.vue"
+import FeaturesChanger from "./FeaturesChanger.vue"
 import Title from "./Title.vue"
 import { ref } from "vue"
 import SubTitle from "./SubTitle.vue"
+import TasksSlider from "./TasksSlider.vue"
 
 const partners = ref([
 	{ name: "Laravel", src: "/imgs/partners/laravel.svg" },

@@ -9,7 +9,7 @@
 						v-text="feature.label"
 						@click.prevent="selectedFeatureIndex = index"
 						class="py-1.5 px-4 rounded-full hover:bg-white/20 transition-colors duration-300"
-						:class="{ '!bg-white text-blue-600': selectedFeatureIndex === index }"
+						:class="{ '!bg-white text-primary-600': selectedFeatureIndex === index }"
 					/>
 				</div>
 				<p v-text="features[selectedFeatureIndex].description" class="text-lg" />
@@ -25,7 +25,7 @@
 						:key="selectedFeatureIndex"
 						:src="features[selectedFeatureIndex].img"
 						:alt="features[selectedFeatureIndex].label"
-						class="rounded-xl absolute h-full sm:w-full object-cover object-top"
+						class="rounded-xl absolute h-full w-full object-cover object-top"
 					/>
 				</Transition>
 			</div>

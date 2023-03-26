@@ -2,7 +2,7 @@
 	<svg
 		aria-hidden="true"
 		viewBox="0 0 281 40"
-		class="absolute top-1/2 left-0 h-[1em] w-full fill-blue-400"
+		class="absolute top-1/2 left-0 h-[1em] w-full fill-primary-400"
 		preserveAspectRatio="none"
 	>
 		<path
