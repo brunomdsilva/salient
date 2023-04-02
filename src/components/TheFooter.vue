@@ -19,7 +19,7 @@
 				<p v-text="'Copyright © 2023 TaxPal. All rights reserved.'" />
 				<div class="flex items-center gap-4">
 					<a
-						href="https://github.com/Brunoomds"
+						href="https://github.com/brunoomds/salient"
 						target="_blank"
 						class="hover:text-slate-900 p-2 transition-colors duration-300"
 					>
@@ -32,11 +32,11 @@
 </template>
 
 <script setup>
-import Container from "./Container.vue"
-import Logo from "./icons/Logo.vue"
-import IconGithub from "./icons/IconGithub.vue"
+import Container from "./Container.vue";
+import Logo from "./icons/Logo.vue";
+import IconGithub from "./icons/IconGithub.vue";
 
 const props = defineProps({
 	menuItems: Array,
-})
+});
 </script>
