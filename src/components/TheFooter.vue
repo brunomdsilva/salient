@@ -19,7 +19,7 @@
 				<p v-text="'Copyright © 2023 TaxPal. All rights reserved.'" />
 				<div class="flex items-center gap-4">
 					<a
-						href="https://github.com/brunoomds/salient"
+						href="https://github.com/brunomdsilva/salient"
 						target="_blank"
 						class="hover:text-slate-900 p-2 transition-colors duration-300"
 					>
